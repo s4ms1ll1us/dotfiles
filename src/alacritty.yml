@@ -11,6 +11,7 @@ window:
   padding:
     x: 10
     y: 10
+  decorations: buttonless
 
 startup_mode: Windowed
 

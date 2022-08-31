@@ -11,7 +11,10 @@ window:
   padding:
     x: 10
     y: 10
-  decorations: buttonless
+  decorations: buttonless # macOS only
+  dimensions:
+    columns: 140
+    lines: 40
 
 startup_mode: Windowed
 
@@ -26,4 +29,4 @@ scrolling:
 cursor:
   style:
     shape: Underline
-    blinking: on
+    blinking: Always

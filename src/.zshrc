@@ -117,7 +117,9 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto' 
-alias ffd='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | tr \\n \\0 | xargs -0 nvim'
+alias ffd='fd --hidden --exclude .git --exclude node_modules | fzf-tmux -p --reverse | tr \\n \\0 | xargs -0 open'
+alias vim='nvim'
+alias cat='bat'
 
 # Configuring tmux
 if which tmux >/dev/null 2>&1

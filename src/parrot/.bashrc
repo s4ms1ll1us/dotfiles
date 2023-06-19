@@ -14,4 +14,4 @@ fi
 PS1+=' '
 
 # Defining aliases
-alias cat='bat'
+alias cat='batcat'

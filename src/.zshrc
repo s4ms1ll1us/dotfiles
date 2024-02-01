@@ -121,18 +121,6 @@ alias ffd='fd --hidden --exclude .git --exclude node_modules | fzf-tmux -p --rev
 alias vim='nvim'
 alias cat='bat'
 
-# Configuring tmux
-if which tmux >/dev/null 2>&1
-then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach || tmux new-session)
-    # when quitting tmux, try to attach
-    while test -z ${TMUX}
-    do
-        tmux attach || break
-    done
-fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

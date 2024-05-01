@@ -1,0 +1,5 @@
+include /usr/share/nano/markdown.nanorc
+
+set tabsize 4
+set tabstospaces
+set mouse

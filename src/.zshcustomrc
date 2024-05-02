@@ -1,0 +1,21 @@
+# Custom exports
+export XDG_CONFIG_HOME="$HOME/.config/"
+
+# Custom aliases
+alias ls='ls -lh --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto' 
+alias vim='nvim'
+alias cat='bat'
+
+ff() {
+    filepath=$(fd -I --hidden --exclude .git --exclude node_modules | fzf-tmux -p --reverse)
+    if [[ $filepath == '' ]]; then
+        return
+    fi
+    vim $filepath
+}
+

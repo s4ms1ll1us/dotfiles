@@ -1,7 +1,14 @@
-local lsp = require('lsp-zero')
-lsp.on_attach(function(client, bufnr)
-    lsp.default_keymaps({buffer = bufnr})
-end)
+require('mason').setup()
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'lua_ls',
+         'pyright',
+         'pylsp'
+    }
+})
 
-local lspconfig = require('lspconfig')
-lspconfig.intelephense.setup({})
+local lsp = require('lspconfig')
+
+lsp.lua_ls.setup {}
+lsp.pyright.setup {}
+lsp.pylsp.setup {}

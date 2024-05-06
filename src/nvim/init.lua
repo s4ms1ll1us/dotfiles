@@ -1,1 +1,2 @@
-require("s4ms1ll1us")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

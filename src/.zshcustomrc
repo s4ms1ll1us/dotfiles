@@ -1,6 +1,3 @@
-# Custom exports
-export XDG_CONFIG_HOME="$HOME/.config/"
-
 # Custom aliases
 alias ls='ls -lh --color=auto'
 alias dir='dir --color=auto'

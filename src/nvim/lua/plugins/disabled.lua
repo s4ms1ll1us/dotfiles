@@ -1,5 +1,3 @@
 return {
-    -- disable trouble
-    -- { "goolord/alpha-nvim", enabled = false },
-    -- { "echasnovski/mini.starter", enabled = false },
+    { "nvimdev/dashboard-nvim", enabled = false },
 }

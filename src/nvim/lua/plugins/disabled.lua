@@ -1,4 +1,5 @@
 return {
+    { "bufferline.nvim", enabled = false },
     { "catppuccin", enabled = false },
     -- { "cmp-buffer", enabled = false },
     -- { "cmp-nvim-lsp", enabled = false },
@@ -7,6 +8,7 @@ return {
     -- { "conform.nvim", enabled = false },
     { "dashboard-nvim", enabled = false },
     { "dressing.nvim", enabled = false },
+    -- { "flash.nvim", enabled = false },
     { "friendly-snippets", enabled = false },
     { "gitsigns.nvim", enabled = false },
     { "gruvbox.nvim", enabled = false },

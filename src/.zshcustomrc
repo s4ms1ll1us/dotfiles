@@ -16,3 +16,4 @@ ff() {
     vim $filepath
 }
 
+set -o vi

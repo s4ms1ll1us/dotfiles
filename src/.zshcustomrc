@@ -16,3 +16,5 @@ ff() {
     fi
     vim $filepath
 }
+
+export SUDO_EDITOR="nvim"

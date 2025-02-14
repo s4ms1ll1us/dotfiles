@@ -68,3 +68,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.wo.number = true
 
+-- Cycle through buffers
+vim.keymap.set('n', '[b', ':bprev<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', ']b', ':bnext<CR>', { noremap = true, silent = true })

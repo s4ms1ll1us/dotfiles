@@ -81,6 +81,15 @@
                                 },
                                 "to": [{ "shell_command": "open -a 'Burp Suite Community Edition'" }],
                                 "type": "basic"
+                            },
+                            {
+                                "description": "Open Parallels Instance",
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": { "mandatory": ["control", "option", "command", "shift"] }
+                                },
+                                "to": [{ "shell_command": "open -a 'Parallels Desktop'" }],
+                                "type": "basic"
                             }
                         ]
                     }

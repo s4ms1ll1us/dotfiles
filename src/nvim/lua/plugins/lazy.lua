@@ -50,21 +50,6 @@ require('lazy').setup({
   -- buffer tabs
   {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 
-  -- LSP packages (mason.nvim)
-  {
-    'williamboman/mason.nvim',
-    config = true,
-  },
-  {
-    'williamboman/mason-lspconfig.nvim',
-    config = function()
-      require("mason").setup()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "pyright", "ts_ls", "lua_ls" },
-        automatic_installation = true,
-      })
-    end
-  },
 
   -- autocompletion
   {
@@ -104,58 +89,25 @@ require('lazy').setup({
     end
   },
 
-  -- LSP configuration (native vim.lspconfig)
+  -- lsp packages
   {
-    'neovim/nvim-lspconfig',
-    cmd = {'LspInfo', 'LspInstall', 'LspStart'},
-    event = {'BufReadPre', 'BufNewFile'},
+    "williamboman/mason.nvim",
     dependencies = {
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'williamboman/mason-lspconfig.nvim'},
+      "williamboman/mason-lspconfig.nvim",
     },
     config = function()
-      local lspconfig = require('lspconfig')
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-      -- common server setup wrapper
-      local function setup_server(name, extra_opts)
-        local opts = vim.tbl_deep_extend('force', {
-          on_attach = on_attach,
-          capabilities = capabilities,
-        }, extra_opts or {})
-        lspconfig[name].setup(opts)
-      end
-
-      -- lua LSP (for neovim configs)
-      lspconfig.lua_ls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        settings = {
-          Lua = {
-            runtime = { version = 'LuaJIT' },
-            workspace = { checkThirdParty = false },
-            diagnostics = { globals = { 'vim' } },
-          },
-        },
+      require("mason").setup()
+      -- optionally auto-install servers
+      require("mason-lspconfig").setup({
+        ensure_installed = { "lua_ls", "pyright", "stylua", "ts_ls" },
+        automatic_installation = true,
       })
+    end,
+  },
 
-      -- typeScript Language Server
-      lspconfig.ts_ls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
-
-      -- python (with virtualenv path)
-      local util = require("lspconfig/util")
-      local path = util.path
-      lspconfig.pyright.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-        before_init = function(_, config)
-          local venv_path = path.join(vim.env.HOME, "virtualenvs", "nvim-venv", "bin", "python")
-          config.settings.python.pythonPath = venv_path
-        end,
-      })
-    end
+  -- lsp configuration
+  {
+    "neovim/nvim-lspconfig"
   }
 })
+

@@ -28,6 +28,14 @@ require('lazy').setup({
     config = function() require("nvim-tree").setup() end,
   },
 
+  -- markdown preview
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = ":call mkdp#util#install()",
+  },
+
   -- session management
   {
     'rmagatti/auto-session',

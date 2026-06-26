@@ -17,8 +17,14 @@ require('lazy').setup({
   -- color scheme
   { "catppuccin/nvim", as = "catppuccin" },
 
-  -- fuzzy finder
-  { 'nvim-telescope/telescope.nvim', branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+  -- telescope
+  {
+    'nvim-telescope/telescope.nvim', version = '*',
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    }
+  },
 
   -- file tree
   {

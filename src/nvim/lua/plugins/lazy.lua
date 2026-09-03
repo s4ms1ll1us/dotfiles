@@ -31,7 +31,7 @@ require('lazy').setup({
     "nvim-tree/nvim-tree.lua",
     version = "*",
     requires = { "nvim-tree/nvim-web-devicons" },
-    config = function() require("nvim-tree").setup() end,
+    config = function() require("nvim-tree").setup({ view = { adaptive_size = true }}) end,
   },
 
   -- markdown preview

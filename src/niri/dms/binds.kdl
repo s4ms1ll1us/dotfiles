@@ -1,3 +1,5 @@
 binds {
+    Mod+S hotkey-overlay-title="Default Launcher: Toggle" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Super+L hotkey-overlay-title="Lock the Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Mod+B { spawn "brave-browser"; }
 }

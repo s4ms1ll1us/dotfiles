@@ -125,6 +125,14 @@ require('lazy').setup({
   -- lsp configuration
   {
     "neovim/nvim-lspconfig"
-  }
+  },
+
+  {
+    "Myzel394/easytables.nvim",
+    ft = "markdown",
+    config = function()
+      require("easytables").setup({})
+    end,
+  },
 })
 

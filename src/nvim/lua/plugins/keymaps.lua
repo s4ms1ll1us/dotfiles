@@ -10,6 +10,9 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<cr>")
 -- format code using LSP
 vim.keymap.set("n", "<leader>fmd", vim.lsp.buf.format)
 
+-- show lsp error
+vim.keymap.set("n", "<leader>se", vim.diagnostic.open_float)
+
 -- markdown preview
 vim.keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<cr>")
 

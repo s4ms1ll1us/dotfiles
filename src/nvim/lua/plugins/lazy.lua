@@ -179,7 +179,7 @@ require('lazy').setup({
       require("mason").setup()
       -- optionally auto-install servers
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyright", "stylua", "ts_ls" },
+        ensure_installed = { "lua_ls", "pyright", "stylua", "ts_ls", "jsonls", "yamlls" },
         automatic_installation = true,
       })
     end,
